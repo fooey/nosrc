@@ -23,17 +23,20 @@ module.exports = function(grunt) {
 			dev: {
 				script: './server.js',
 				options: {
-					nodeArgs: ['--harmony'],
+					"execMap": {
+						"js": "iojs --harmony",
+						// "js": "node --harmony",
+					},
 					ext: 'js,jade,json',
 					ignore: [
-						'node_modules/**', 
-						'public/**', 
-						'gruntfile.js', 
+						'node_modules/**',
+						'public/**',
+						'gruntfile.js',
 					],
 
 					delay: 100,
 					env: {
-						PORT: '3004',
+						PORT: '3000',
 						NODE_ENV: 'development',
 					},
 					cwd: __dirname,
@@ -61,7 +64,7 @@ module.exports = function(grunt) {
 
 					// delay: 1,
 					env: {
-						PORT: '3004',
+						PORT: '3000',
 					},
 					cwd: __dirname,
 				}

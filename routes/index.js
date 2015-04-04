@@ -1,20 +1,18 @@
 'use strict';
 
-module.exports = function(app, express) {
+module.exports = function(app/*, express*/) {
 
-	var dumpRoute = function(req, res) {
-		res.send(req.params);
-	}
-	
+	// function dumpRoute(req, res) {
+	// 	res.send(req.params);
+	// }
+
 
 	/*
 	*	Home
 	*/
 
-	app.get('/', function(req, res) {
-		res.render('home');
-	});
-	
+	app.get('/', (req, res) => res.render('home'));
+
 
 
 

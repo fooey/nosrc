@@ -1,18 +1,16 @@
 "use strict";
 
 module.exports = function(width, height, callback) {
-	var util = require('util');
+	const bgColor = '#ccc';
 
-	var bgColor = '#ccc';
-
-	var svgData = [
-		'<?xml version="1.0" encoding="UTF-8" standalone="no"?>',
-		util.format('<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" width="%d" height="%d" viewport="0 0 %d %d">', width, height, width, height),
-			'<desc>Powered by http://nosrc.net</desc>',
-			util.format('<rect fill="%s" stroke-width="none" width="%d" height="%d" />', bgColor, width, height),
-			util.format('<text x="%d" y="%d" font-size="12" text-anchor="end" fill="#000">%d×%d</text>', width - 2, height - 2, width, height),
-		'</svg>'
+	const svgData = [
+		`<?xml version="1.0" encoding="UTF-8" standalone="no"?>`,
+		`<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewport="0 0 ${width} ${height}">`,
+			`<desc>Powered by http://nosrc.net</desc>`,
+			`<rect fill="${bgColor}" stroke-width="none" width="${width}" height="${height}" />`,
+			`<text x="${width - 2}" y="${height - 2}" font-size="12" text-anchor="end" fill="#000">${width}×${height}</text>`,
+		`</svg>`
 	];
 
-	callback(null, svgData.join(''));
+	callback(null, svgData.join('\n'));
 };
