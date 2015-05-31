@@ -24,7 +24,7 @@ module.exports = function(grunt) {
 				script: './server.js',
 				options: {
 					"execMap": {
-						"js": "iojs --harmony",
+						"js": "iojs",
 						// "js": "node --harmony",
 					},
 					ext: 'js,jade,json',
@@ -58,7 +58,10 @@ module.exports = function(grunt) {
 			prod: {
 				script: './server.js',
 				options: {
-					nodeArgs: ['--harmony'],
+					"execMap": {
+						"js": "iojs",
+						// "js": "node --harmony",
+					},
 					ext: 'js,jade,json',
 					ignore: ['node_modules/**', 'public/**', 'gruntfile.js', 'appdata/**'],
 

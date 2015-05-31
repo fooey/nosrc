@@ -11,7 +11,7 @@ module.exports = function(app/*, express*/) {
 	*	Home
 	*/
 
-	app.get('/', (req, res) => res.render('home'));
+	app.get('/', function(req, res) {res.render('home')});
 
 
 

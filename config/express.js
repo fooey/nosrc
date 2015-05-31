@@ -16,6 +16,12 @@ module.exports = function(app, express) {
 	const favicon = require('serve-favicon');
 
 
+	// all environments
+	app.set('port', process.env.PORT || 3000);
+	app.set('views', GLOBAL.paths.getView());
+	app.set('view engine', 'jade');
+
+
 	if (app.get('env') === 'development') {
 		app.use(errorHandler({ dumpExceptions: true, showStack: true }));
 		app.locals.pretty = true;
@@ -24,12 +30,8 @@ module.exports = function(app, express) {
 	else {
 		app.use(errorHandler());
 		app.use(morgan('combined'));
+		app.set('view cache', true);
 	}
-
-	// all environments
-	app.set('port', process.env.PORT || 3003);
-	app.set('views', GLOBAL.paths.getView());
-	app.set('view engine', 'jade');
 
 
 
