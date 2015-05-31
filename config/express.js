@@ -23,7 +23,7 @@ module.exports = function(app, express) {
 	}
 	else {
 		app.use(errorHandler());
-		app.use(morgan());
+		app.use(morgan('common'));
 	}
 
 	// all environments
