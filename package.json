@@ -12,7 +12,7 @@
   },
   "main": "server",
   "engines": {
-    "iojs": "~1.6.3"
+    "iojs": "~2.1.0"
   },
   "dependencies": {
     "babel": "^5.4.7",
