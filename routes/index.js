@@ -1,28 +1,15 @@
-'use strict';
 
-module.exports = function(app/*, express*/) {
+import imgRenderer from './img';
 
-	// function dumpRoute(req, res) {
-	// 	res.send(req.params);
-	// }
+export default function(app) {
 
+    app.get('/', (req, res) => res.render('home'));
 
-	/*
-	*	Home
-	*/
-
-	app.get('/', function(req, res) {res.render('home')});
+    app.get([
+        '/:width([0-9]{1,})x:height([0-9]{1,})',
+        '/:width([0-9]{1,})',
+    ], imgRenderer);
 
 
-
-
-	/*
-	*	img
-	*/
-
-	app.get('/:width([0-9]{1,})x:height([0-9]{1,})', require(GLOBAL.paths.getRoute('img')));
-	app.get('/:width([0-9]{1,})', require(GLOBAL.paths.getRoute('img')));
-
-
-	return;
+    return;
 };
