@@ -1,7 +1,9 @@
 
-import morgan from 'morgan';
+import cors from 'cors';
+import cookieParser from 'cookie-parser';
 import errorHandler from 'errorhandler';
 import favicon from 'serve-favicon';
+import morgan from 'morgan';
 
 
 export default function(app, express) {
@@ -19,6 +21,9 @@ export default function(app, express) {
     app.set('port', process.env.PORT || 3000);
     app.set('views', './views');
     app.set('view engine', 'jade');
+
+    app.use(cookieParser());
+    app.use(cors());
 
 
     if (app.get('env') === 'development') {
@@ -47,5 +52,21 @@ export default function(app, express) {
     };
 
     app.use(express.static('./public', staticOptions));
+
+
+
+    // set a cookie
+    app.use((req, res, next) => {
+        let uaUUID = req.cookies.uaUUID;
+
+        if (!uaUUID) {
+            uaUUID = require('uuid').v4();
+
+            const cookieMaxAge = 1000 * 60 * 60 * 24 * 356 * 2; // 2 years
+            res.cookie('uaUUID', uaUUID, { maxAge: cookieMaxAge, httpOnly: true});
+        }
+
+        next(); // <-- important!
+    });
 };
 
