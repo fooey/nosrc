@@ -6,7 +6,8 @@
     "url": "http://jasonrushton.com"
   },
   "scripts": {
-    "dev": "npx nodemon index.js"
+    "dev": "npx nodemon index.js",
+    "start": "node index.js"
   },
   "name": "nosrc",
   "main": "index",
