@@ -1,36 +1,18 @@
 {
+  "version": "2021.1.0",
   "author": {
     "name": "Jason Rushton",
     "email": "jason@jasonrushton.com",
     "url": "http://jasonrushton.com"
   },
+  "scripts": {
+    "dev": "npx nodemon index.js"
+  },
   "name": "nosrc",
-  "main": "server",
+  "main": "index",
   "homepage": "https://github.com/fooey/nosrc",
   "repository": {
     "type": "git",
     "url": "git@github.com:fooey/nosrc.git"
-  },
-  "engines": {
-    "iojs": "~2.2.1"
-  },
-  "dependencies": {
-    "babel": "^5.8.29",
-    "cookie-parser": "^1.4.0",
-    "cors": "^2.7.1",
-    "errorhandler": "^1.4.2",
-    "express": "^4.13.3",
-    "jade": "^1.11.0",
-    "morgan": "^1.6.1",
-    "newrelic": "^1.23.0",
-    "serve-favicon": "^2.3.0",
-    "universal-analytics": "^0.3.9",
-    "uuid": "^2.0.1"
-  },
-  "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-concurrent": "^1.0.0",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-nodemon": "^0.4.0"
   }
 }
