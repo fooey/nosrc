@@ -1,7 +1,7 @@
 const http = require('http');
 const { readFile } = require('fs').promises;
 
-const host = 'localhost';
+const host = '0.0.0.0';
 const port = 3000;
 
 const placeholderRoutes = /^\/(\d{1,9}x\d{1,9}|\d{1,9})$/i;
