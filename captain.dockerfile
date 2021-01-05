@@ -9,7 +9,6 @@ RUN set -x \
 WORKDIR /usr/src/app
 COPY ./ /usr/src/app
 RUN set -x \
-  && npm run build \
   && rm -rf /usr/include \
   && rm -rf /var/cache/apk/* /usr/share/man /tmp/* \
   && echo
