@@ -6,8 +6,7 @@
     "url": "http://jasonrushton.com"
   },
   "scripts": {
-    "dev": "npx nodemon index.js",
-    "start": "node index.js"
+    "dev": "wrangler pages dev"
   },
   "name": "nosrc",
   "main": "index",
@@ -15,5 +14,9 @@
   "repository": {
     "type": "git",
     "url": "git@github.com:fooey/nosrc.git"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^3.3.1",
+    "wrangler": "^0.0.10"
   }
 }
